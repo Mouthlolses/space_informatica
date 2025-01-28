@@ -1,5 +1,5 @@
 <resources>
-    <string name="title_activity_client"/>
-    <string name="title_activity_planos"/>
+    <string name="title_activity_client" />
+    <string name="title_activity_planos" />
     <string name="app_name">Space</string>
 </resources>

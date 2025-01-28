@@ -17,6 +17,7 @@ class ClientActivity : AppCompatActivity() {
 
      private lateinit var binding: ActivityClientBinding
      private lateinit var cardViewManuten: CardView
+     private lateinit var cardViewAtendRemote: CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +34,11 @@ class ClientActivity : AppCompatActivity() {
             (startActivity(intent))
         }
 
+        cardViewAtendRemote = binding.cardView2
+        cardViewAtendRemote.setOnClickListener{
+            val intent = Intent(this, AtendRemoteActivity::class.java)
+            (startActivity(intent))
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
