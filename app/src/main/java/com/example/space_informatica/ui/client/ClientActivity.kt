@@ -2,16 +2,12 @@ package com.example.space_informatica.ui.client
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
-import androidx.compose.material3.Card
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.space_informatica.R
 import com.example.space_informatica.databinding.ActivityClientBinding
-import com.example.space_informatica.ui.StartScreenActivity
 
 class ClientActivity : AppCompatActivity() {
 
