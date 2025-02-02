@@ -1,13 +1,11 @@
 package com.example.space_informatica.ui.client
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.space_informatica.R
 import com.example.space_informatica.databinding.ActivityAtendPresencialBinding
-import com.example.space_informatica.databinding.StartscreenActivityBinding
 
 class AtendPresencialActivity : AppCompatActivity() {
 

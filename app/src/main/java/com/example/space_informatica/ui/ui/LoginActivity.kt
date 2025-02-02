@@ -9,13 +9,14 @@ import com.example.space_informatica.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityLoginBinding
+    private val binding by lazy {
+        ActivityLoginBinding.inflate(layoutInflater)
 
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
 
-        binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
