@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Space_informatica"
         tools:targetApi="31">
         <activity
+            android:name=".ui.client.InstalacaoPecasActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.client.AtendPresencialActivity"
             android:exported="false" />
         <activity
