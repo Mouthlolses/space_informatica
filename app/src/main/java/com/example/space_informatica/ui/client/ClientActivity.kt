@@ -14,6 +14,7 @@ class ClientActivity : AppCompatActivity() {
      private lateinit var binding: ActivityClientBinding
      private lateinit var cardViewManuten: CardView
      private lateinit var cardViewAtendRemote: CardView
+     private lateinit var cardViewAtendPresencial: CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +34,12 @@ class ClientActivity : AppCompatActivity() {
         cardViewAtendRemote = binding.cardView2
         cardViewAtendRemote.setOnClickListener{
             val intent = Intent(this, AtendRemoteActivity::class.java)
+            (startActivity(intent))
+        }
+
+        cardViewAtendPresencial = binding.cardView3
+        cardViewAtendPresencial.setOnClickListener{
+            val intent = Intent(this, AtendPresencialActivity::class.java)
             (startActivity(intent))
         }
 

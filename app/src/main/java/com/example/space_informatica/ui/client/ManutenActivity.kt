@@ -14,7 +14,7 @@ class ManutenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
-
+        
         binding = ActivityManutenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

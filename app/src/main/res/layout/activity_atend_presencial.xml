@@ -6,16 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.client.AtendRemoteActivity">
+    tools:context=".ui.client.AtendPresencialActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Tela de Atendimento Remoto"
+        android:text="Tela de Atendimento Presencial"
         android:textAlignment="center"
-        android:textSize="34sp"
         android:textStyle="bold"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
