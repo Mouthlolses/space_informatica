@@ -14,16 +14,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintGuide_percent="0.2" />
 
     <com.google.android.material.card.MaterialCardView
 
         android:id="@+id/cardView"
         android:layout_width="160dp"
         android:layout_height="205dp"
+        android:backgroundTint="@color/white"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
-        android:backgroundTint="@color/white"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2">
@@ -57,10 +58,11 @@
         android:id="@+id/cardView2"
         android:layout_width="160dp"
         android:layout_height="205dp"
+        android:backgroundTint="@color/white"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toTopOf="@+id/guideline2">
 
@@ -94,10 +96,10 @@
         android:layout_width="160dp"
         android:layout_height="205dp"
         android:layout_marginTop="40dp"
+        android:backgroundTint="@color/white"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="@id/guideline3"
         app:layout_constraintTop_toBottomOf="@id/cardView2">
 
@@ -131,10 +133,10 @@
         android:layout_width="160dp"
         android:layout_height="205dp"
         android:layout_marginTop="40dp"
+        android:backgroundTint="@color/white"
         app:cardCornerRadius="8dp"
         app:cardElevation="8dp"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        android:backgroundTint="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardView">
 
@@ -168,5 +170,16 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginLeft="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logosemfundo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
