@@ -11,7 +11,6 @@ import com.example.space_informatica.R
 import com.example.space_informatica.databinding.StartscreenActivityBinding
 import com.example.space_informatica.receivers.NetworkMonitor
 import com.example.space_informatica.ui.client.ClientActivity
-import com.example.space_informatica.ui.ui.LoginActivity
 import com.example.space_informatica.ui.ui.PlanosActivity
 import com.example.space_informatica.utils.NetworkUtils.isNetworkAvailable
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -19,17 +18,21 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class StartScreenActivity : AppCompatActivity() {
 
-    private lateinit var binding: StartscreenActivityBinding
+    //private lateinit var binding: StartscreenActivityBinding
     private lateinit var planos: Button
     private lateinit var login: Button
     private lateinit var networkMonitor: NetworkMonitor
 
+    //Substitui a inicialização padrão do binding
+    private val binding by lazy {
+        StartscreenActivityBinding.inflate(layoutInflater)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Inicializando o binding
-        binding = StartscreenActivityBinding.inflate(layoutInflater)
 
-        //Deginindo o layout a partir do binding
+
+        //Definindo o layout a partir do binding
         setContentView(binding.root)
 
         // Inicializar o monitor de conectividade

@@ -2,21 +2,20 @@ package com.example.space_informatica.ui.client
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
-import androidx.compose.material3.Card
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.space_informatica.R
 import com.example.space_informatica.databinding.ActivityClientBinding
-import com.example.space_informatica.ui.StartScreenActivity
 
 class ClientActivity : AppCompatActivity() {
 
      private lateinit var binding: ActivityClientBinding
      private lateinit var cardViewManuten: CardView
+     private lateinit var cardViewAtendRemote: CardView
+     private lateinit var cardViewAtendPresencial: CardView
+     private lateinit var cardViewInstalacaoPecas: CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +29,24 @@ class ClientActivity : AppCompatActivity() {
         cardViewManuten = binding.cardView
         cardViewManuten.setOnClickListener{
             val intent = Intent(this,ManutenActivity::class.java)
+            (startActivity(intent))
+        }
+
+        cardViewAtendRemote = binding.cardView2
+        cardViewAtendRemote.setOnClickListener{
+            val intent = Intent(this, AtendRemoteActivity::class.java)
+            (startActivity(intent))
+        }
+
+        cardViewAtendPresencial = binding.cardView3
+        cardViewAtendPresencial.setOnClickListener{
+            val intent = Intent(this, AtendPresencialActivity::class.java)
+            (startActivity(intent))
+        }
+
+        cardViewInstalacaoPecas = binding.cardView4
+        cardViewInstalacaoPecas.setOnClickListener{
+            val intent = Intent(this, InstalacaoPecasActivity::class.java)
             (startActivity(intent))
         }
 

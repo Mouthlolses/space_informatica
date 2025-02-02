@@ -1,21 +1,22 @@
-package com.example.space_informatica.ui.admin
+package com.example.space_informatica.ui.client
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.space_informatica.R
-import com.example.space_informatica.databinding.ActivityAdminBinding
+import com.example.space_informatica.databinding.ActivityAtendPresencialBinding
 
-class AdminActivity : AppCompatActivity() {
+class AtendPresencialActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityAdminBinding
+  private lateinit var binding: ActivityAtendPresencialBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
 
-        binding = ActivityAdminBinding.inflate(layoutInflater)
+        binding = ActivityAtendPresencialBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
