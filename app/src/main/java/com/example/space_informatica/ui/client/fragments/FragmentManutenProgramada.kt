@@ -9,7 +9,6 @@ import com.example.space_informatica.R
 
 class FragmentManuntenProgramada : Fragment() {
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

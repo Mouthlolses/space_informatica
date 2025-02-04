@@ -46,7 +46,6 @@
                 android:id="@+id/buttonParaLoginSheet"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1dp"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/roboto_medium"
                 android:text="Acessar minha conta"
