@@ -11,6 +11,7 @@ import com.example.space_informatica.R
 import com.example.space_informatica.databinding.StartscreenActivityBinding
 import com.example.space_informatica.receivers.NetworkMonitor
 import com.example.space_informatica.ui.client.ClientActivity
+import com.example.space_informatica.ui.ui.LoginActivity
 import com.example.space_informatica.ui.ui.PlanosActivity
 import com.example.space_informatica.utils.NetworkUtils.isNetworkAvailable
 import com.google.android.material.bottomsheet.BottomSheetBehavior
@@ -54,7 +55,7 @@ class StartScreenActivity : AppCompatActivity() {
         //Configuração do Caminho para a tela de Login
         login = binding.buttonParaLoginSheet
         login.setOnClickListener{
-            val intent = Intent(this, ClientActivity::class.java)
+            val intent = Intent(this, LoginActivity::class.java)
             (startActivity(intent))
         }
 
