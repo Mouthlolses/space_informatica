@@ -13,18 +13,37 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/textViewMa"
-            android:layout_width="match_parent"
+            android:id="@+id/textViewManutencao1"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintWidth_percent="0.7"
             android:ellipsize="end"
+            android:fontFamily="@font/roboto_medium"
             android:maxLines="1"
-            android:text="Olá Mundo!"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/imageView"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@tools:sample/lorem/random" />
+
+        <TextView
+            android:id="@+id/textViewManutencao2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintWidth_percent="0.7"
+            android:ellipsize="end"
+            android:fontFamily="@font/roboto_medium"
+            android:maxLines="1"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/textViewManutencao1"
+            app:layout_constraintStart_toStartOf="@+id/textViewManutencao1"
+            app:layout_constraintTop_toBottomOf="@+id/textViewManutencao1"
+            tools:text="@tools:sample/lorem/random" />
+
 
         <ImageView
             android:id="@+id/imageView"
@@ -33,11 +52,11 @@
             android:contentDescription="imagealeatoria"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textViewManutencao1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintWidth_percent="0.3"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            tools:srcCompat="@drawable/personageminformacoes" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
