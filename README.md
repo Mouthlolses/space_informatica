@@ -1,6 +1,16 @@
+[EN]
+# Application for Clients to Manage Subscriptions and Request Maintenance
+
+### This application was developed to meet the specific need of a local merchant who was looking for a digital solution to facilitate service requests from their customers.
+### The system operates through subscription plans, offering three distinct categories, each with different pricing and benefits.
+
+### *Development still in the finalization process.
+
+
+[PT]
 # Aplicativo Para Clientes Gereciarem Assinatura e Solicitar Manutenções
 
-### Esta aplicação foi desenvolvida para atender a uma necessidade específica de um comerciante, que buscava uma solução digital para facilitar a solicitação de serviços por parte de seus clientes. 
+### Esta aplicação foi desenvolvida para atender a uma necessidade específica de um comerciante local, que buscava uma solução digital para facilitar a solicitação de serviços por parte de seus clientes. 
 ### O sistema opera por meio de planos de assinatura, oferecendo três categorias distintas, cada uma com preços e benefícios diferenciados.
 
 ### *Desenvolvimento ainda em processo de finalização
