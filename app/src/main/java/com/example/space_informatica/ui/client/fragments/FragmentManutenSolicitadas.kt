@@ -18,7 +18,12 @@ class FragmentManutenSolicitadas : Fragment() {
     ): View {
 
         // Inicializa o binding do fragmento
-        binding = FragmentManutenSolicitadasBinding.inflate(inflater,container,false)
+        binding = FragmentManutenSolicitadasBinding
+            .inflate(
+                inflater,
+                container,
+                false
+            )
 
 
         // Retorna a view inflada
