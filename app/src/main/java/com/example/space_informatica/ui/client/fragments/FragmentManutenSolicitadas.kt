@@ -5,22 +5,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.space_informatica.R
+import com.example.space_informatica.databinding.FragmentManutenSolicitadasBinding
 
 class FragmentManutenSolicitadas : Fragment() {
+
+    private lateinit var binding: FragmentManutenSolicitadasBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-        val view = inflater.inflate(
-            R.layout.fragment_manuten_solicitadas,
-            container,
-            false
-        )
+        // Inicializa o binding do fragmento
+        binding = FragmentManutenSolicitadasBinding.inflate(inflater,container,false)
 
-        return view
+
+        // Retorna a view inflada
+        return binding.root
     }
 }
