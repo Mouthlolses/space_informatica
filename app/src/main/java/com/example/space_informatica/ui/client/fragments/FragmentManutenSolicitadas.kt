@@ -25,7 +25,6 @@ class FragmentManutenSolicitadas : Fragment() {
                 false
             )
 
-
         // Retorna a view inflada
         return binding.root
     }
