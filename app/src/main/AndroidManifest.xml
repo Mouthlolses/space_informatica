@@ -33,10 +33,10 @@
             android:name=".ui.client.ClientActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ui.LoginActivity"
+            android:name=".ui.screens_initial.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.ui.PlanosActivity"
+            android:name=".ui.screens_initial.PlanosActivity"
             android:exported="false"
             android:label="@string/title_activity_planos"
             android:theme="@style/Theme.Space_informatica" />

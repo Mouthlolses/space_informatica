@@ -1,4 +1,4 @@
-package com.example.space_informatica.ui.ui
+package com.example.space_informatica.ui.screens_initial
 
 import android.content.Intent
 import android.os.Bundle

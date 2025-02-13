@@ -10,8 +10,8 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.space_informatica.R
 import com.example.space_informatica.databinding.StartscreenActivityBinding
 import com.example.space_informatica.receivers.NetworkMonitor
-import com.example.space_informatica.ui.ui.LoginActivity
-import com.example.space_informatica.ui.ui.PlanosActivity
+import com.example.space_informatica.ui.screens_initial.LoginActivity
+import com.example.space_informatica.ui.screens_initial.PlanosActivity
 import com.example.space_informatica.utils.NetworkUtils.isNetworkAvailable
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
