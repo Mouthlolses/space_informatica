@@ -1,12 +1,11 @@
-package com.example.space_informatica.ui.client.database
+package com.example.space_informatica.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.space_informatica.ui.client.database.dao.UserDao
-import com.example.space_informatica.ui.client.database.model.User
-
+import com.example.space_informatica.database.dao.UserDao
+import com.example.space_informatica.database.model.User
 
 @Database(entities = [User::class], version = 1, exportSchema = false)
 abstract class AppDataBase : RoomDatabase() {
@@ -23,4 +22,5 @@ abstract class AppDataBase : RoomDatabase() {
                 .build()
         }
     }
+
 }

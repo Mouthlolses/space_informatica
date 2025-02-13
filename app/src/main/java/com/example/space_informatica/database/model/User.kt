@@ -1,4 +1,4 @@
-package com.example.space_informatica.ui.client.database.model
+package com.example.space_informatica.database.model
 
 import android.os.Parcelable
 import androidx.room.ColumnInfo
