@@ -1,8 +1,7 @@
-package com.example.space_informatica.ui.ui
+package com.example.space_informatica.ui.screens_initial
 
 import android.os.Bundle
 import android.widget.Button
-import androidx.activity.addCallback
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
