@@ -16,6 +16,7 @@ class ManutenActivity : AppCompatActivity() {
     private lateinit var btnScheduled: Button
     private lateinit var btnRequest: Button
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
