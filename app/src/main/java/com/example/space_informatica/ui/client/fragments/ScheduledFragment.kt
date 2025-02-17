@@ -11,6 +11,7 @@ class ScheduledFragment : Fragment() {
 
     private var _binding: ScheduledFragmentBinding? = null
     private val binding get() = _binding!!
+    private var categoria: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,6 +24,7 @@ class ScheduledFragment : Fragment() {
             container,
             false
         )
+
         return binding.root
     }
 

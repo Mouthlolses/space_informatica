@@ -29,6 +29,7 @@ class ManutenActivity : AppCompatActivity() {
 
 
         btnScheduled.setOnClickListener {
+
             supportFragmentManager
                 .beginTransaction()
                 .replace(R.id.fragment_content, ScheduledFragment())
