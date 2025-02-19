@@ -15,7 +15,11 @@
         android:layout_margin="16dp"
         android:clickable="true"
         android:hint="E-mail"
-        app:boxBackgroundColor="@color/white"
+        app:boxBackgroundColor="#FFFFFF"
+        app:boxBackgroundMode="filled"
+        app:hintTextColor="@color/primaryColor"
+        app:placeholderText="exemple@gmail.com"
+        app:placeholderTextColor="#C5565454"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +30,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text" />
+            android:inputType="text"
+            android:textColor="@color/black" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -38,8 +43,13 @@
         android:clickable="true"
         android:hint="Password"
         app:boxBackgroundColor="@color/white"
+        app:boxBackgroundMode="filled"
         app:endIconMode="password_toggle"
+
+
         app:errorEnabled="true"
+        app:hintTextColor="@color/primaryColor"
+
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
