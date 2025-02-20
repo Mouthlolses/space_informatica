@@ -17,7 +17,6 @@ class RequestFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
         _binding = RequestFragmentBinding.inflate(
             inflater,
             container,
