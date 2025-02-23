@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Space_informatica" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <item name="android:windowBackground">@color/backgroundColor</item>
+        <item name="android:windowBackground">@drawable/gradient_background</item>
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryVariant">@color/primaryVariantColor</item>
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
