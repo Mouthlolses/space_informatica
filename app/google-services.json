@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "514549497670",
+    "project_id": "spaceinformatica-1b0be",
+    "storage_bucket": "spaceinformatica-1b0be.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514549497670:android:b43684d628a034fa26af47",
+        "android_client_info": {
+          "package_name": "com.example.space_informatica"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnXX2FLy80vYvv80tTWSaVZoFJZTLBuSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
