@@ -2,12 +2,14 @@ package com.example.space_informatica.ui.screens_initial
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.space_informatica.R
 import com.example.space_informatica.databinding.ActivityLoginBinding
 import com.example.space_informatica.ui.client.ClientActivity
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
 
@@ -20,6 +22,9 @@ class LoginActivity : AppCompatActivity() {
         //enableEdgeToEdge()
         setContentView(binding.root)
         setupListeners()
+        binding.btnRegister.setOnClickListener {
+            registerUser()
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -27,6 +32,35 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
     }
+
+
+    //Amostra de autenticação via loginFirebase
+    private fun registerUser() {
+
+        val email: String = "matheusbento@gmail.com"
+        val password: String = "password1321"
+
+        val autentication = FirebaseAuth.getInstance()
+        autentication.createUserWithEmailAndPassword(
+            email, password
+        ).addOnSuccessListener { authResult ->
+
+            val email = authResult.user?.email
+            val id = authResult.user?.uid
+
+            exibirMensagem("Sucesso ao cadastrar usuario: $id - $email")
+
+        }.addOnFailureListener { exception ->
+            exception.message
+        }
+
+    }
+    private fun exibirMensagem(text: String) {
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show()
+
+    }
+
+
 
     private fun setupListeners() {
         binding.btnAcess.setOnClickListener {
