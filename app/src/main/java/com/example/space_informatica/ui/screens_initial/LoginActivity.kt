@@ -16,14 +16,42 @@ class LoginActivity : AppCompatActivity() {
     private val binding by lazy {
         ActivityLoginBinding.inflate(layoutInflater)
     }
+    private val autentication by lazy {
+        FirebaseAuth.getInstance()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        verificarUsuarioLogado()
+    }
+
+    private fun verificarUsuarioLogado() {
+        val usuario = autentication.currentUser
+        val id = usuario?.uid
+        if (usuario != null) {
+            startActivity(
+                Intent(this, ClientActivity::class.java)
+            )
+            exibirMensagem("Usuario está logado com id: $id")
+        } else {
+            exibirMensagem("Usuario não está logado")
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
         setContentView(binding.root)
         setupListeners()
+        /*binding.btnRegister.setOnClickListener {
+            registerUser()
+        }*/
+
         binding.btnRegister.setOnClickListener {
             registerUser()
+        }
+        binding.btnAcess.setOnClickListener {
+            logarUser()
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -34,13 +62,27 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
+    private fun logarUser() {
+
+        val email: String = ""
+        val password: String = ""
+
+        autentication.signInWithEmailAndPassword(
+            email, password
+        ).addOnSuccessListener { authResult ->
+            Toast.makeText(this, "Usuario Logado", Toast.LENGTH_LONG).show()
+            startActivity(Intent(this, ClientActivity::class.java))
+        }.addOnFailureListener { exception ->
+            Toast.makeText(this, "Falha ao Logar: ${exception}", Toast.LENGTH_LONG).show()
+        }
+    }
+
     //Amostra de autenticação via loginFirebase
     private fun registerUser() {
 
-        val email: String = "matheusbento@gmail.com"
-        val password: String = "password1321"
+        val email: String = ""
+        val password: String = ""
 
-        val autentication = FirebaseAuth.getInstance()
         autentication.createUserWithEmailAndPassword(
             email, password
         ).addOnSuccessListener { authResult ->
@@ -55,11 +97,11 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
+
     private fun exibirMensagem(text: String) {
         Toast.makeText(this, text, Toast.LENGTH_LONG).show()
 
     }
-
 
 
     private fun setupListeners() {
