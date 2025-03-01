@@ -64,8 +64,8 @@ class LoginActivity : AppCompatActivity() {
 
     private fun logarUser() {
 
-        val email: String = ""
-        val password: String = ""
+        val email = ""
+        val password = ""
 
         autentication.signInWithEmailAndPassword(
             email, password
@@ -80,8 +80,8 @@ class LoginActivity : AppCompatActivity() {
     //Amostra de autenticação via loginFirebase
     private fun registerUser() {
 
-        val email: String = ""
-        val password: String = ""
+        val email = ""
+        val password = ""
 
         autentication.createUserWithEmailAndPassword(
             email, password
