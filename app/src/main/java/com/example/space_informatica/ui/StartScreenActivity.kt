@@ -18,16 +18,15 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 class StartScreenActivity : AppCompatActivity() {
 
-    private lateinit var binding: StartscreenActivityBinding
+    private val binding by lazy {
+        StartscreenActivityBinding.inflate(layoutInflater)
+    }
     private lateinit var planos: Button
     private lateinit var login: Button
     private lateinit var networkMonitor: NetworkMonitor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        // Inicializando o binding
-        binding = StartscreenActivityBinding.inflate(layoutInflater)
-
         //Deginindo o layout a partir do binding
         setContentView(binding.root)
 
@@ -49,7 +48,7 @@ class StartScreenActivity : AppCompatActivity() {
 
         //Configuração do Caminho para a tela de Login
         login = binding.buttonParaLoginSheet
-        login.setOnClickListener{
+        login.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             (startActivity(intent))
         }
