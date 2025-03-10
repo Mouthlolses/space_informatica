@@ -64,28 +64,38 @@ class LoginActivity : AppCompatActivity() {
 
     private fun logarUser() {
 
-        val email = binding.email
-        val password = binding.Password
+        val email = binding.email.text.toString().trim()
+        val password = binding.Password.text.toString().trim()
+
+        if (email.isEmpty() || password.isEmpty()) {
+            exibirMensagem("Preencha os campos para acessar a sua conta")
+            return
+        }
 
         autentication.signInWithEmailAndPassword(
-            email.text.toString(), password.text.toString()
+            email, password
         ).addOnSuccessListener { authResult ->
             Toast.makeText(this, "Usuario Logado", Toast.LENGTH_LONG).show()
             startActivity(Intent(this, ClientActivity::class.java))
             finish()
         }.addOnFailureListener { exception ->
-            Toast.makeText(this, "Falha ao Logar: ${exception}", Toast.LENGTH_LONG).show()
+            exibirMensagem("Erro ao autenticar a conta ${exception.message}")
         }
     }
 
     //Amostra de autenticação via loginFirebase
     private fun registerUser() {
 
-        val email = binding.email
-        val password = binding.Password
+        val email = binding.email.text.toString().trim()
+        val password = binding.Password.text.toString().trim()
+
+        if (email.isEmpty() || password.isEmpty()) {
+            exibirMensagem("Preencha os campos para realizar o registro")
+            return
+        }
 
         autentication.createUserWithEmailAndPassword(
-            email.text.toString(), password.text.toString()
+            email, password
         ).addOnSuccessListener { authResult ->
 
             val email = authResult.user?.email
