@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
         FirebaseAuth.getInstance()
     }
 
-    override fun onStart() {
+    /*override fun onStart() {
         super.onStart()
         verificarUsuarioLogado()
     }
@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
         } else {
             exibirMensagem("Usuario não está logado")
         }
-    }
+    }*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -64,14 +64,15 @@ class LoginActivity : AppCompatActivity() {
 
     private fun logarUser() {
 
-        val email = ""
-        val password = ""
+        val email = binding.email
+        val password = binding.Password
 
         autentication.signInWithEmailAndPassword(
-            email, password
+            email.text.toString(), password.text.toString()
         ).addOnSuccessListener { authResult ->
             Toast.makeText(this, "Usuario Logado", Toast.LENGTH_LONG).show()
             startActivity(Intent(this, ClientActivity::class.java))
+            finish()
         }.addOnFailureListener { exception ->
             Toast.makeText(this, "Falha ao Logar: ${exception}", Toast.LENGTH_LONG).show()
         }
@@ -80,11 +81,11 @@ class LoginActivity : AppCompatActivity() {
     //Amostra de autenticação via loginFirebase
     private fun registerUser() {
 
-        val email = ""
-        val password = ""
+        val email = binding.email
+        val password = binding.Password
 
         autentication.createUserWithEmailAndPassword(
-            email, password
+            email.text.toString(), password.text.toString()
         ).addOnSuccessListener { authResult ->
 
             val email = authResult.user?.email
@@ -93,7 +94,7 @@ class LoginActivity : AppCompatActivity() {
             exibirMensagem("Sucesso ao cadastrar usuario: $id - $email")
 
         }.addOnFailureListener { exception ->
-            exception.message
+            exibirMensagem("Erro ao cadastrar usuario ${exception.message}")
         }
 
     }

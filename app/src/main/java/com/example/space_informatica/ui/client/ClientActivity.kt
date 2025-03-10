@@ -49,5 +49,6 @@ class ClientActivity : AppCompatActivity() {
         autentication.signOut()
         Toast.makeText(this, "Usuario Deslogado", Toast.LENGTH_LONG).show()
         startActivity(Intent(this, LoginActivity::class.java))
+        finish()
     }
 }

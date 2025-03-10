@@ -15,7 +15,9 @@ import com.example.space_informatica.ui.client.fragments.ScheduledFragment
 
 class ManutenActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityManutenBinding
+    private val binding by lazy {
+        ActivityManutenBinding.inflate(layoutInflater)
+    }
     private lateinit var btnScheduled: Button
     private lateinit var btnRequest: Button
 
@@ -23,7 +25,6 @@ class ManutenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
-        binding = ActivityManutenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
