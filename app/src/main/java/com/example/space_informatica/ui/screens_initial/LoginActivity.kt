@@ -74,7 +74,7 @@ class LoginActivity : AppCompatActivity() {
 
         autentication.signInWithEmailAndPassword(
             email, password
-        ).addOnSuccessListener { authResult ->
+        ).addOnSuccessListener {
             Toast.makeText(this, "Usuario Logado", Toast.LENGTH_LONG).show()
             startActivity(Intent(this, ClientActivity::class.java))
             finish()
@@ -111,7 +111,6 @@ class LoginActivity : AppCompatActivity() {
 
     private fun exibirMensagem(text: String) {
         Toast.makeText(this, text, Toast.LENGTH_LONG).show()
-
     }
 
 
