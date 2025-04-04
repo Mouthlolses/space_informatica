@@ -21,9 +21,9 @@ class StartScreenActivity : AppCompatActivity() {
     private val binding by lazy {
         StartscreenActivityBinding.inflate(layoutInflater)
     }
-    private lateinit var planos: Button
-    private lateinit var login: Button
-    private lateinit var networkMonitor: NetworkMonitor
+    private val networkMonitor by lazy {
+        NetworkMonitor(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,24 +31,19 @@ class StartScreenActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Inicializar o monitor de conectividade
-        networkMonitor = NetworkMonitor(this)
         networkMonitor.registerCallback()
-
-
         if (!isNetworkAvailable(this)) {
             Toast.makeText(this, "Sem conexão com a internet", Toast.LENGTH_SHORT).show()
         }
 
         //Configuração do Caminho para a tela de Planos
-        planos = binding.buttonParaPlanosSheet
-        planos.setOnClickListener {
+        binding.buttonParaPlanosSheet.setOnClickListener {
             val intent = Intent(this, PlanosActivity::class.java)
             (startActivity(intent))
         }
 
         //Configuração do Caminho para a tela de Login
-        login = binding.buttonParaLoginSheet
-        login.setOnClickListener {
+        binding.buttonParaLoginSheet.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             (startActivity(intent))
         }

@@ -43,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
         setContentView(binding.root)
-        setupListeners()
+        //setupListeners()
         binding.btnRegister.setOnClickListener {
             registerUser()
         }
@@ -77,9 +77,8 @@ class LoginActivity : AppCompatActivity() {
         val email = binding.email.text.toString().trim()
         val password = binding.Password.text.toString().trim()
 
-        authRepository.registerUser(email, password) { success, message ->
+        authRepository.registerUser(email, password) { _, message ->
             exibirMensagem(message)
-            finish()
         }
     }
 
@@ -87,6 +86,10 @@ class LoginActivity : AppCompatActivity() {
         Toast.makeText(this, text, Toast.LENGTH_LONG).show()
     }
 
+    private fun entry() {
+        val intent = Intent(this, ClientActivity::class.java)
+        startActivity(intent)
+    }
 
     private fun setupListeners() {
         binding.btnAcess.setOnClickListener {
@@ -97,11 +100,6 @@ class LoginActivity : AppCompatActivity() {
                 entry()
             }
         }
-    }
-
-    private fun entry() {
-        val intent = Intent(this, ClientActivity::class.java)
-        startActivity(intent)
     }
 
     private fun validateEntryLogin(lEmail: String, lPassword: String): Boolean {
