@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
+import com.example.space_informatica.R
 import com.example.space_informatica.databinding.RequestFragmentBinding
 
 class RequestFragment : Fragment() {
@@ -22,6 +24,18 @@ class RequestFragment : Fragment() {
             container,
             false
         )
+
+        binding.extendedFabRequest.setOnClickListener {
+            parentFragmentManager.commit {
+                replace(
+                    R.id.fragment_content,
+                    FormRequestFragment()
+                )
+                addToBackStack(null)
+            }
+        }
+
+
         return binding.root
     }
 

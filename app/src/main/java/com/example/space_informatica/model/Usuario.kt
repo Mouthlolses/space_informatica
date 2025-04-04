@@ -8,7 +8,7 @@ import kotlinx.parcelize.Parcelize
 @Entity
 @Parcelize
 data class Usuarios(
-
+    
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0L,
     val email: String,

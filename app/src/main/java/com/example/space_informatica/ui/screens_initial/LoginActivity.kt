@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.space_informatica.R
 import com.example.space_informatica.databinding.ActivityLoginBinding
+import com.example.space_informatica.repository.AuthRepository
 import com.example.space_informatica.ui.client.ClientActivity
 import com.google.firebase.auth.FirebaseAuth
 
@@ -16,8 +17,8 @@ class LoginActivity : AppCompatActivity() {
     private val binding by lazy {
         ActivityLoginBinding.inflate(layoutInflater)
     }
-    private val autentication by lazy {
-        FirebaseAuth.getInstance()
+    private val authRepository by lazy {
+        AuthRepository(FirebaseAuth.getInstance())
     }
 
     /*override fun onStart() {
@@ -43,10 +44,6 @@ class LoginActivity : AppCompatActivity() {
         //enableEdgeToEdge()
         setContentView(binding.root)
         setupListeners()
-        /*binding.btnRegister.setOnClickListener {
-            registerUser()
-        }*/
-
         binding.btnRegister.setOnClickListener {
             registerUser()
         }
@@ -61,52 +58,29 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-
+    //autenticação via Firebase // ja editado
     private fun logarUser() {
-
         val email = binding.email.text.toString().trim()
         val password = binding.Password.text.toString().trim()
 
-        if (email.isEmpty() || password.isEmpty()) {
-            exibirMensagem("Preencha os campos para acessar a sua conta")
-            return
-        }
-
-        autentication.signInWithEmailAndPassword(
-            email, password
-        ).addOnSuccessListener {
-            Toast.makeText(this, "Usuario Logado", Toast.LENGTH_LONG).show()
-            startActivity(Intent(this, ClientActivity::class.java))
-            finish()
-        }.addOnFailureListener { exception ->
-            exibirMensagem("Erro ao autenticar a conta ${exception.message}")
+        authRepository.logarUser(email, password) { success, message ->
+            exibirMensagem(message)
+            if (success) {
+                entry()
+                finish()
+            }
         }
     }
 
-    //Amostra de autenticação via loginFirebase
+    //login via Firebase/// ja editado
     private fun registerUser() {
-
         val email = binding.email.text.toString().trim()
         val password = binding.Password.text.toString().trim()
 
-        if (email.isEmpty() || password.isEmpty()) {
-            exibirMensagem("Preencha os campos para realizar o registro")
-            return
+        authRepository.registerUser(email, password) { success, message ->
+            exibirMensagem(message)
+            finish()
         }
-
-        autentication.createUserWithEmailAndPassword(
-            email, password
-        ).addOnSuccessListener { authResult ->
-
-            val email = authResult.user?.email
-            val id = authResult.user?.uid
-
-            exibirMensagem("Sucesso ao cadastrar usuario: $id - $email")
-
-        }.addOnFailureListener { exception ->
-            exibirMensagem("Erro ao cadastrar usuario ${exception.message}")
-        }
-
     }
 
     private fun exibirMensagem(text: String) {
