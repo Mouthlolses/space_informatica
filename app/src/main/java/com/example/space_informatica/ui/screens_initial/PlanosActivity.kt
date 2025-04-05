@@ -1,14 +1,12 @@
 package com.example.space_informatica.ui.screens_initial
 
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.space_informatica.R
 import com.example.space_informatica.databinding.ActivityPlanosBinding
-import com.google.android.material.card.MaterialCardView
 
 class PlanosActivity : AppCompatActivity() {
 

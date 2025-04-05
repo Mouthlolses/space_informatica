@@ -5,6 +5,7 @@
 
     <!-- Colors Custom -->
     <color name="backgroundColor">#260366</color>
+    <color name="backgroundColorLogin">#F9174A75</color>
     <color name="primaryColor">#03A9F4</color>
     <color name="primaryVariantColor">#00BCD4</color>
 
