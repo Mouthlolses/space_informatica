@@ -7,37 +7,38 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.space_informatica.R
+import com.example.space_informatica.databinding.ActivityPlanosBinding
 import com.google.android.material.card.MaterialCardView
 
 class PlanosActivity : AppCompatActivity() {
 
+    private val binding by lazy {
+        ActivityPlanosBinding.inflate(layoutInflater)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //enableEdgeToEdge()
-        setContentView(R.layout.activity_planos)
+        setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        val buttonReturn = findViewById<Button>(R.id.buttonReturn)
-        buttonReturn.setOnClickListener {
+        binding.buttonReturn.setOnClickListener {
             finish()
         }
 
-        val cardView = findViewById<MaterialCardView>(R.id.cardView)
-        cardView.setOnClickListener {
+        binding.cardView.setOnClickListener {
             showDialog()
         }
 
-        val cardView2 = findViewById<MaterialCardView>(R.id.cardView2)
-        cardView2.setOnClickListener {
+        binding.cardView2.setOnClickListener {
             showDialog2()
         }
 
-        val cardView3 = findViewById<MaterialCardView>(R.id.cardView3)
-        cardView3.setOnClickListener {
+        binding.cardView3.setOnClickListener {
             showDialog3()
         }
     }

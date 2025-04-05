@@ -5,6 +5,7 @@ plugins {
     id("com.google.gms.google-services")
     id("kotlin-parcelize")
     id("com.google.devtools.ksp")
+    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
@@ -43,6 +44,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        dataBinding = true
         compose = true
     }
 }
