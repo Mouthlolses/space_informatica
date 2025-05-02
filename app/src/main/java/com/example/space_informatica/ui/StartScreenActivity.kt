@@ -26,6 +26,7 @@ class StartScreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //enableEdgeToEdge()
         //Deginindo o layout a partir do binding
         setContentView(binding.root)
 

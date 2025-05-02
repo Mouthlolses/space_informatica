@@ -1,7 +1,6 @@
 package com.example.space_informatica.ui.client
 
 import android.os.Bundle
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -18,8 +17,6 @@ class ManutenActivity : AppCompatActivity() {
     private val binding by lazy {
         ActivityManutenBinding.inflate(layoutInflater)
     }
-    private lateinit var btnScheduled: Button
-    private lateinit var btnRequest: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,11 +24,7 @@ class ManutenActivity : AppCompatActivity() {
         //enableEdgeToEdge()
         setContentView(binding.root)
 
-
-        btnScheduled = binding.buttonProgramada
-        btnRequest = binding.buttonSolicitada
-
-        btnScheduled.setOnClickListener {
+        binding.buttonProgramada.setOnClickListener {
             //Outra maneira para fazer a transição entre fragments
             /*supportFragmentManager
                 .beginTransaction()
@@ -47,7 +40,7 @@ class ManutenActivity : AppCompatActivity() {
             }
         }
 
-        btnRequest.setOnClickListener {
+        binding.buttonSolicitada.setOnClickListener {
             //Utilizando KTX do Android Jetpack
             supportFragmentManager.commit {
                 replace<RequestFragment>(
