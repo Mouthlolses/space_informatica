@@ -3,6 +3,7 @@ package com.example.space_informatica.ui
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -12,7 +13,6 @@ import com.example.space_informatica.receivers.NetworkMonitor
 import com.example.space_informatica.ui.screens_initial.LoginActivity
 import com.example.space_informatica.ui.screens_initial.PlanosActivity
 import com.example.space_informatica.utils.NetworkUtils.isNetworkAvailable
-import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 
 class StartScreenActivity : AppCompatActivity() {
@@ -26,7 +26,7 @@ class StartScreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //enableEdgeToEdge()
+        enableEdgeToEdge()
         //Deginindo o layout a partir do binding
         setContentView(binding.root)
 
@@ -47,15 +47,6 @@ class StartScreenActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             (startActivity(intent))
         }
-
-
-        // Referência ao Bottom Sheet
-        val bottomsheet = binding.standardBottomSheet
-        val bottomSheetBehavior = BottomSheetBehavior.from(bottomsheet)
-
-        // Configuração do Bottom Sheet
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
-        bottomSheetBehavior.isDraggable = false
 
         //enableEdgeToEdge()
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->

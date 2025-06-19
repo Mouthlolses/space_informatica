@@ -3,6 +3,7 @@ package com.example.space_informatica.ui.screens_initial
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -41,11 +42,8 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //enableEdgeToEdge()
+        enableEdgeToEdge()
         setContentView(binding.root)
-        binding.btnRegister.setOnClickListener {
-            registerUser()
-        }
         binding.btnAcess.setOnClickListener {
             logarUser()
         }
@@ -71,7 +69,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    //login via Firebase/// ja editado
+/*    //login via Firebase/// ja editado
     private fun registerUser() {
         val email = binding.email.text.toString().trim()
         val password = binding.Password.text.toString().trim()
@@ -79,7 +77,7 @@ class LoginActivity : AppCompatActivity() {
         authRepository.registerUser(email, password) { _, message ->
             exibirMensagem(message)
         }
-    }
+    }*/
 
     private fun exibirMensagem(text: String) {
         Toast.makeText(this, text, Toast.LENGTH_LONG).show()

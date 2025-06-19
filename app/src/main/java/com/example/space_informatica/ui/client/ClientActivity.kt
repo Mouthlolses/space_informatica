@@ -34,9 +34,6 @@ class ClientActivity : AppCompatActivity() {
             (startActivity(intent))
         }
 
-        binding.button.setOnClickListener {
-            deslogarUsuario()
-        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
